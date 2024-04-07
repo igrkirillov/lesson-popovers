@@ -1,0 +1,54 @@
+body {
+    font-size: 14pt;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    margin: auto;
+    font-size: 14pt;
+}
+
+button:nth-child(n + 2) {
+    margin-top: 100px;
+}
+
+.button-green {
+    background-color: lightgreen;
+}
+
+.button-coral {
+    background-color: lightcoral;
+}
+
+.button-blue {
+    background-color: lightblue;
+}
+
+.button-yellow {
+    background-color: lightyellow;
+}
+
+.popovers {
+    position: absolute;
+    max-width: 250px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.popovers-hidden {
+    display: none;
+}
+
+.popovers-title {
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+}
+
+.popovers-content {
+    padding: 4px;
+}
