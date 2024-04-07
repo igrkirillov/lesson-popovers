@@ -1,5 +1,4 @@
 import PopoversWidget from "../js/PopoversWidget";
-import {determinePlacement} from "./test_utils";
 
 describe("checking popovers visible", () => {
   test.each([
