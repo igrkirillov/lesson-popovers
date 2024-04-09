@@ -1,0 +1,57 @@
+body {
+    font-size: 14pt;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 100px auto 0 auto;
+    font-size: 14pt;
+}
+
+.button-green {
+    background-color: lightgreen;
+}
+
+.button-coral {
+    background-color: lightcoral;
+}
+
+.button-blue {
+    background-color: lightblue;
+}
+
+.button-yellow {
+    background-color: lightyellow;
+}
+
+.popovers {
+    position: absolute;
+    max-width: 250px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.popovers-hidden {
+    display: none;
+}
+
+.popovers-title {
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+}
+
+.popovers-content {
+    padding: 4px;
+}
+
+
+/*# sourceMappingURL=main.css.map*/
