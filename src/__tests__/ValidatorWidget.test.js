@@ -16,14 +16,7 @@ describe("checking popovers visible", () => {
             </button>
         </main>`;
     const buttonElement = document.querySelector("button");
-    const widget = new PopoversWidget("title", "content", placement);
-    buttonElement.addEventListener("click", () => {
-      if (!widget.isVisible()) {
-        widget.open(buttonElement);
-      } else {
-        widget.close();
-      }
-    })
+    const widget = new PopoversWidget(buttonElement);
     buttonElement.click();
     expect(widget.isVisible()).toBe(expectedAfterFirstClick);
     buttonElement.click();

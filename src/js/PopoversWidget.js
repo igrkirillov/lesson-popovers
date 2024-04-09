@@ -1,13 +1,17 @@
 import {placements} from "./placements";
 
 export default class PopoversWidget {
-  constructor(titleStr, contentStr, placement) {
+  constructor(ownerElement) {
     this.id = performance.now();
-    this.element = this.createElement(titleStr, contentStr);
-    this.placement = placement;
+    this.element = this.createElement(ownerElement);
+    this.placement = ownerElement.dataset["placement"];
+    this.ownerElement = ownerElement;
+    this.addOpenCloseActionsListener(ownerElement);
   }
 
-  createElement(titleStr, contentStr) {
+  createElement(ownerElement) {
+    const titleStr = ownerElement.dataset["title"];
+    const contentStr = ownerElement.dataset["content"];
     const innerMarkup =
         `<div class="popovers-title">
           ${titleStr}
@@ -28,13 +32,24 @@ export default class PopoversWidget {
     return popoversElement;
   }
 
+  addOpenCloseActionsListener(ownerElement) {
+    const widget = this;
+    ownerElement.addEventListener("click", () => {
+      if (widget.isVisible()) {
+        widget.close();
+      } else {
+        widget.open();
+      }
+    })
+  }
+
   isVisible() {
     return !this.element.classList.contains("popovers-hidden");
   }
 
-  open(ownerElement) {
+  open() {
     this.element.classList.remove("popovers-hidden");
-    const ownerRect = ownerElement.getBoundingClientRect();
+    const ownerRect = this.ownerElement.getBoundingClientRect();
     this.locatePosition(ownerRect);
   }
 
